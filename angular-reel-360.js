@@ -1,3 +1,5 @@
+angular.module('angular-reel-360', []);
+
 angular.module('angular-reel-360').directive('angularReel', [ function() {
     'use strict';
     return {
