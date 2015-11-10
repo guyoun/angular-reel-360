@@ -3,6 +3,6 @@
 Simple Augular directive for [Reel](http://reel.org)
 
 # Installation
-`$ bower install angular-jquery-reel`
+`$ bower install angular-reel-360`
 
 # Usage
