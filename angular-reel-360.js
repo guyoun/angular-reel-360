@@ -4,7 +4,7 @@ angular.module('angular-reel-360').run(['$templateCache', function($templateCach
   'use strict';
 
   $templateCache.put('angular-reel-template.html',
-      "<div ng-show=\"mode == 'normal'\"> <img id=\"{{image_id}}\" ng-src=\"{{image}}\"></div><div ng-show=\"mode == 'large'\"> <img id=\"{{large_image_id}}\" ng-src=\"{{frame_image_src}}\"> </div>"
+      "<div ng-show=\"mode == 'normal'\"> <img id=\"{{image_id}}\" ng-src=\"{{image}}\" class='img-responsive'></div><div ng-show=\"mode == 'large'\"> <img id=\"{{large_image_id}}\" ng-src=\"{{frame_image_src}}\" class='img-responsive'> </div>"
   );
 }]);
 
@@ -17,7 +17,8 @@ angular.module('angular-reel-360').directive('angularReel', [ function() {
         images: '=images',
         image: '=image',
         id: '=id',
-        use_magnify:'=useMagnify'
+        use_magnify:'=useMagnify',
+        control: '=control'
       },
       link: function(scope, element, attrs) {
         var image_id = 'angular-reel-'+ scope.$id + '-' + scope.id;

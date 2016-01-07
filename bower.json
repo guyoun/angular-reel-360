@@ -1,7 +1,7 @@
 {
   "name": "angular-reel-360",
   "description": "A simple angular directive for Reel",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/guyoun/angular-reel-360",
   "license": "MIT",
   "main": "./angular-reel-360.js",

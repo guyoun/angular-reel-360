@@ -1,3 +1,11 @@
+Version 0.0.3
+-------------
+
+Released on January 7th, 2016
+
+- Add img-responsive class
+- Update directive's scope
+
 Version 0.0.2
 -------------
 
