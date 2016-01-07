@@ -1,0 +1,8 @@
+Version 0.0.2
+-------------
+
+Released on January 7th, 2016
+
+- Integrate Magnify library
+- Change configs of jquery-reel
+- Add attributes: `control`, `use-magnify`
