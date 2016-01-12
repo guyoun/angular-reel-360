@@ -4,7 +4,7 @@ angular.module('angular-reel-360').run(['$templateCache', function($templateCach
   'use strict';
 
   $templateCache.put('angular-reel-template.html',
-      "<div ng-show=\"mode == 'normal'\"> <img id=\"{{image_id}}\" ng-src=\"{{image}}\" class='img-responsive'></div><div ng-show=\"mode == 'large'\"> <img id=\"{{large_image_id}}\" ng-src=\"{{frame_image_src}}\" class='img-responsive'> </div>"
+      "<div ng-show=\"mode == 'normal'\"> <img id=\"{{image_id}}\" ng-src=\"{{image}}\" class='{{normal_image_class}}'></div><div ng-show=\"mode == 'large'\"> <img id=\"{{large_image_id}}\" ng-src=\"{{frame_image_src}}\" class='{{large_image_class}}'> </div>"
   );
 }]);
 
@@ -16,13 +16,24 @@ angular.module('angular-reel-360').directive('angularReel', [ function() {
       scope: {
         images: '=images',
         image: '=image',
-        id: '=id',
-        use_magnify:'=useMagnify',
-        control: '=control'
+        id: '=?id',
+        use_magnify:'=?useMagnify',
+        control: '=?control',
+        get_large_image: '=?getLargeImage',
+        normal_image_class: '=?normalImageClass',
+        large_image_class: '=?largeImageClass'
       },
       link: function(scope, element, attrs) {
         var image_id = 'angular-reel-'+ scope.$id + '-' + scope.id;
         var large_image_id = image_id + '-large';
+
+        if(typeof(scope.normal_image_class) == 'undefined'){
+            scope.normal_image_class = 'img-responsive';
+        }
+
+        if(typeof(scope.large_image_class) == 'undefined'){
+          scope.large_image_class = 'img-responsive';
+        }
 
         scope.image_id = image_id;
         scope.large_image_id = large_image_id;
