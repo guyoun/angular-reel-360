@@ -1,3 +1,13 @@
+Version 0.0.4
+-------------
+
+Released on January 12th, 2016
+
+- Add `normal-image-class` and `large-image-class` attributes
+- Add `get-large-image` attribute: a callback for getting a large image path
+- Update binding options
+
+
 Version 0.0.3
 -------------
 
