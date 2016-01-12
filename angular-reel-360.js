@@ -55,8 +55,11 @@ angular.module('angular-reel-360').directive('angularReel', [ function() {
           if(scope.mode == 'normal'){
             var frame_image_src = $('#'+ image_id).attr('src');
             var large_image_src = frame_image_src;
-            scope.frame_image_src = frame_image_src;
 
+            scope.frame_image_src = frame_image_src;
+            if(typeof(scope.get_large_image) != 'undefined'){
+              large_image_src = scope.get_large_image(frame_image_src)
+            }
             $('#' + large_image_id).magnify({
               speed: 200,
               src: large_image_src
