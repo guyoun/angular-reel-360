@@ -41,12 +41,18 @@ angular.module('angular-reel-360').directive('angularReel', [function () {
 
             var reelImages = scope.images;
 
-            var imgLoad = imagesLoaded($("#" + image_id), function () {
-                $("#" + image_id).reel({
-                    shy: true,
-                    steppable: false,
-                    images: reelImages
-                });
+            imagesLoaded("#"+image_id, function(instance) {
+                var init_reel = function(){
+                    if($("#"+image_id).width() > 0 && $("#"+image_id).height() >0){
+                        $("#"+image_id).reel({
+                            shy: true,
+                            steppable: false,
+                            images: reelImages
+                        });
+                        clearInterval(init_reel_interval);
+                    }
+                }
+                var init_reel_interval = setInterval(init_reel, 200);
 
                 if (!scope.$$phase) {
                     scope.$apply();
